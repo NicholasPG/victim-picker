@@ -20,6 +20,7 @@ public class RemoveVictimButton extends JButton implements ActionListener {
     }
 
 
+
     @Override
     public void actionPerformed(ActionEvent e) {
         if (numOfVictims == 2) {
