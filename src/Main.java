@@ -1,6 +1,7 @@
 
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -47,11 +48,35 @@ public class Main{
 
         // add them to a central frame
         Frame frame = new Frame();
+
+        //ADD YOUR TESTING COMPONENTS HERE
+
+        //Create ArrayList of every necessary VictimPanel
+        ArrayList<VictimPanel> victimPanels = new ArrayList<>();
+        for (int i = 1; i <= 10; i++) {
+            victimPanels.add(new VictimPanel(i));
+        }
+
+        for (VictimPanel v : victimPanels) {
+            frame.add(v);
+            v.setVisible(false);
+        }
+
+        AddVictimButton addVictimButton = new AddVictimButton(victimPanels);
+        frame.add(addVictimButton);
+
+        RemoveVictimButton removeVictimButton = new RemoveVictimButton(victimPanels);
+        frame.add(removeVictimButton);
+
+/*
         frame.add(button);
         frame.add(victimLabel);
         frame.add(panel);
         frame.add(volunteer);
         frame.add(timerLabel);
+
+ */
+
 
         // Creates a window listener so that when frame is close
         // an action is performed, intended for  exporting victim list upon exit
