@@ -62,20 +62,22 @@ public class Main{
             v.setVisible(false);
         }
 
-        AddVictimButton addVictimButton = new AddVictimButton(victimPanels);
+        VictimNumber victimNumber = new VictimNumber(victimPanels);
+
+        AddVictimButton addVictimButton = new AddVictimButton(victimNumber);
         frame.add(addVictimButton);
 
-        RemoveVictimButton removeVictimButton = new RemoveVictimButton(victimPanels);
+        RemoveVictimButton removeVictimButton = new RemoveVictimButton(victimNumber);
         frame.add(removeVictimButton);
 
-/*
+
         frame.add(button);
         frame.add(victimLabel);
         frame.add(panel);
         frame.add(volunteer);
         frame.add(timerLabel);
 
- */
+
 
 
         // Creates a window listener so that when frame is close

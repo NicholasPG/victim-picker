@@ -1,17 +1,11 @@
 import javax.swing.*;
 import java.awt.*;
 
-//YO, here is a GitHub repo that I forked off of the main branch since I didn't have the access to
-// make a new branch. https://github.com/NicholasPG/victim-picker
-// I have the foundation of the setVisibility stuff for the add and remove victim
-// buttons as well as some tentative sizing stuff in the VictimPanel class. Anyway, I am having
-// trouble counting the number of victims on screen and sharing that information between the
-// buttons. I beleive the solution is to create the buttons in the same class like the
-// ButtonsPanel class that already exists in this project. We just need to move all of the logic
-// that I have in the individual RemoveVictimButton and AddVictimButton into one class.
-// So Basically, we need to create a new class that extends JPanel that is for these two buttons
-// and then have that class create the buttons, implement their logic, then have a variable
-// that both buttons can access that counts the number of victimPanels on the screen at the moment.
+// Got the adding and removing working. I made a new class "VictimNumber.java" that handles all the logic from both buttons
+// (just the adding and removing aspect, there is no Victim info present yet). So we should start on getting the actual victim
+// info in each John next.
+//ALS0, should we make our mini panels smaller to leave more room for the other info and buttons on the side or should we
+// make the frame bigga
 
 public class VictimPanel extends JPanel {
 
