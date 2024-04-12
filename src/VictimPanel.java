@@ -54,7 +54,7 @@ public class VictimPanel extends JPanel {
                 break;
 
             case 3 : //2 victims on screen (right panel)
-                this.setBounds(490,TopLeftCornerY,TwoThreeFourPanelWidth,TwoPanelHeight);
+                this.setBounds((TopLeftCornerX + TwoThreeFourPanelWidth),TopLeftCornerY,TwoThreeFourPanelWidth,TwoPanelHeight);
                 break;
 
             case 4, 7 : //3 or 4 victims on screen (top left panel)
@@ -62,19 +62,19 @@ public class VictimPanel extends JPanel {
                 break;
 
             case 5, 8 : //3 or 4 victims on screen (top right panel)
-                this.setBounds(490,TopLeftCornerY,TwoThreeFourPanelWidth,ThreeFourHeight);
+                this.setBounds((TopLeftCornerX + TwoThreeFourPanelWidth),TopLeftCornerY,TwoThreeFourPanelWidth,ThreeFourHeight);
                 break;
 
             case 6 : //3 victims on screen (bottom panel)
-                this.setBounds(308,265,TwoThreeFourPanelWidth,ThreeFourHeight);
+                this.setBounds((TopLeftCornerX + (TwoThreeFourPanelWidth/2)),(TopLeftCornerY + ThreeFourHeight),TwoThreeFourPanelWidth,ThreeFourHeight);
                 break;
 
             case 9 : //4 victims on screen (bottom left panel)
-                this.setBounds(TopLeftCornerX,265,TwoThreeFourPanelWidth,225);
+                this.setBounds(TopLeftCornerX,(TopLeftCornerY + ThreeFourHeight),TwoThreeFourPanelWidth,ThreeFourHeight);
                 break;
 
             case 10 : //4 victims on screen (bottom right panel)
-                this.setBounds(490,265,TwoThreeFourPanelWidth,225);
+                this.setBounds((TopLeftCornerX + TwoThreeFourPanelWidth),(TopLeftCornerY + ThreeFourHeight),TwoThreeFourPanelWidth,ThreeFourHeight);
                 break;
 
             default :
