@@ -9,6 +9,14 @@ import java.awt.*;
 
 public class VictimPanel extends JPanel {
 
+    //CHANGE THESE VALUES TO CHANGE THE SIZE OF THE VictimPanel Square (the space in which all victim panels reside)
+    private final int OnePanelWidth = 800;
+    private final int OnePanelHeight = 450;
+
+    //X and Y values for the top left coordinates of the VictimPanel Square (the space in which all victim panels reside)
+    private final int TopLeftCornerX = 200;
+    private final int TopLeftCornerY = 40;
+
     //BUTTONS CURRENTLY HAVE ABSOLUTLEY 0 FUNCTIONALITY
     private final JButton addPointButton;
     private final JButton removePointButton;
@@ -17,18 +25,20 @@ public class VictimPanel extends JPanel {
 
     private final int number;
 
-    //VALUES FOR RESIZING THE PANELS AND THEIR VALUES
-    private final int OnePanelWidth = 730;
-    private final int TwoThreeFourPanelWidth = 365;
-    private final int TwoPanelHeight = 450;
-    private final int ThreeFourHeight = 225;
-    private final int OnePanelHeight = 450;
 
-    private final int TopLeftCornerX = 125;
-    private final int TopLeftCornerY = 40;
+
+
+    //These values are dependent on the size of the VictimPanel Square (the space in which all victim panels reside)
+    private final int TwoThreeFourPanelWidth = OnePanelWidth/2;
+    private final int TwoPanelHeight = OnePanelHeight;
+    private final int ThreeFourHeight = OnePanelHeight/2;
+
+
+
 
     VictimPanel(int num) {
         this.number = num;
+
 
         addPointButton = new JButton("Add Point");
         addPointButton.setFocusable(false);
@@ -39,42 +49,94 @@ public class VictimPanel extends JPanel {
         markAbsentButton = new JButton("Mark Absent");
         markAbsentButton.setFocusable(false);
 
-        pickVictimButton = new JButton("Mark Absent");
+        pickVictimButton = new JButton("Pick Victim");
         pickVictimButton.setFocusable(false);
+
+
+        //SET LOCAL VARIABLES SO THAT ALL STATEMENTS CAN BE COPIED AND PASTED
+        int localX, localY, localWidth, localHeight;
 
         //Setting Bounds of Frame
         switch(number)
         {
             case 1 : //1 victim on screen
-                this.setBounds(TopLeftCornerX,TopLeftCornerY,OnePanelWidth,OnePanelHeight);
+                localX = TopLeftCornerX;
+                localY = TopLeftCornerY;
+                localWidth = OnePanelWidth;
+                localHeight = OnePanelHeight;
+
+                this.setBounds(localX,localY,localWidth,localHeight);
+                pickVictimButton.setBounds((int)(localWidth/(16/3)),(localHeight/9),(int)(localWidth/1.6),(int)(localHeight/4.5));
                 break;
 
             case 2 : //2 victims on screen (left panel)
-                this.setBounds(TopLeftCornerX,TopLeftCornerY,TwoThreeFourPanelWidth,TwoPanelHeight);
+                localX = TopLeftCornerX;
+                localY = TopLeftCornerY;
+                localWidth = TwoThreeFourPanelWidth;
+                localHeight = TwoPanelHeight;
+
+                this.setBounds(localX,localY,localWidth,localHeight);
+                pickVictimButton.setBounds((int)(localWidth/(16/3)),(localHeight/9),(int)(localWidth/1.6),(int)(localHeight/4.5));
                 break;
 
             case 3 : //2 victims on screen (right panel)
-                this.setBounds((TopLeftCornerX + TwoThreeFourPanelWidth),TopLeftCornerY,TwoThreeFourPanelWidth,TwoPanelHeight);
+                localX = TopLeftCornerX + TwoThreeFourPanelWidth;
+                localY = TopLeftCornerY;
+                localWidth = TwoThreeFourPanelWidth;
+                localHeight = TwoPanelHeight;
+
+                this.setBounds(localX,localY,localWidth,localHeight);
+                pickVictimButton.setBounds((int)(localWidth/(16/3)),(localHeight/9),(int)(localWidth/1.6),(int)(localHeight/4.5));
                 break;
 
             case 4, 7 : //3 or 4 victims on screen (top left panel)
-                this.setBounds(TopLeftCornerX,TopLeftCornerY,TwoThreeFourPanelWidth,ThreeFourHeight);
+                localX = TopLeftCornerX;
+                localY = TopLeftCornerY;
+                localWidth = TwoThreeFourPanelWidth;
+                localHeight = ThreeFourHeight;
+
+                this.setBounds(localX,localY,localWidth,localHeight);
+                pickVictimButton.setBounds((int)(localWidth/(16/3)),(localHeight/9),(int)(localWidth/1.6),(int)(localHeight/4.5));
                 break;
 
             case 5, 8 : //3 or 4 victims on screen (top right panel)
-                this.setBounds((TopLeftCornerX + TwoThreeFourPanelWidth),TopLeftCornerY,TwoThreeFourPanelWidth,ThreeFourHeight);
+                localX = TopLeftCornerX + TwoThreeFourPanelWidth;
+                localY = TopLeftCornerY;
+                localWidth = TwoThreeFourPanelWidth;
+                localHeight = ThreeFourHeight;
+
+                this.setBounds(localX,localY,localWidth,localHeight);
+                pickVictimButton.setBounds((int)(localWidth/(16/3)),(localHeight/9),(int)(localWidth/1.6),(int)(localHeight/4.5));
                 break;
 
             case 6 : //3 victims on screen (bottom panel)
-                this.setBounds((TopLeftCornerX + (TwoThreeFourPanelWidth/2)),(TopLeftCornerY + ThreeFourHeight),TwoThreeFourPanelWidth,ThreeFourHeight);
+                localX = TopLeftCornerX + (TwoThreeFourPanelWidth/2);
+                localY = TopLeftCornerY + ThreeFourHeight;
+                localWidth = TwoThreeFourPanelWidth;
+                localHeight = ThreeFourHeight;
+
+                this.setBounds(localX,localY,localWidth,localHeight);
+                pickVictimButton.setBounds((int)(localWidth/(16.0/3)),(localHeight/9),(int)(localWidth/1.6),(int)(localHeight/4.5));
                 break;
 
             case 9 : //4 victims on screen (bottom left panel)
-                this.setBounds(TopLeftCornerX,(TopLeftCornerY + ThreeFourHeight),TwoThreeFourPanelWidth,ThreeFourHeight);
+                localX = TopLeftCornerX;
+                localY = TopLeftCornerY + ThreeFourHeight;
+                localWidth = TwoThreeFourPanelWidth;
+                localHeight = ThreeFourHeight;
+
+                this.setBounds(localX,localY,localWidth,localHeight);
+                pickVictimButton.setBounds((int)(localWidth/(16.0/3)),(localHeight/9),(int)(localWidth/1.6),(int)(localHeight/4.5));
                 break;
 
             case 10 : //4 victims on screen (bottom right panel)
-                this.setBounds((TopLeftCornerX + TwoThreeFourPanelWidth),(TopLeftCornerY + ThreeFourHeight),TwoThreeFourPanelWidth,ThreeFourHeight);
+                localX = TopLeftCornerX + TwoThreeFourPanelWidth;
+                localY = TopLeftCornerY + ThreeFourHeight;
+                localWidth = TwoThreeFourPanelWidth;
+                localHeight = ThreeFourHeight;
+
+                this.setBounds(localX,localY,localWidth,localHeight);
+                pickVictimButton.setBounds((int)(localWidth/(16.0/3)),(localHeight/9),(int)(localWidth/1.6),(int)(localHeight/4.5));
                 break;
 
             default :
@@ -88,6 +150,7 @@ public class VictimPanel extends JPanel {
         this.add(removePointButton);
         this.add(markAbsentButton);
         this.add(pickVictimButton);
+
     }
 
 }

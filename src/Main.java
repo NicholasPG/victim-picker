@@ -71,11 +71,11 @@ public class Main{
         frame.add(removeVictimButton);
 
 
-        frame.add(button);
-        frame.add(victimLabel);
-        frame.add(panel);
-        frame.add(volunteer);
-        frame.add(timerLabel);
+        //frame.add(button);
+        //frame.add(victimLabel);
+        //frame.add(panel);
+        //frame.add(volunteer);
+        //frame.add(timerLabel);
 
 
 
